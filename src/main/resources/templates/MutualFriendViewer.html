@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Twitter Mutual Friends</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+
+    <!-- jQuery library -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/twitter.mutualfriendviewer.js}"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Find Mutual Friends</h1>
+        <p>Enter users' Twitter screen names below</p>
+    </div>
+
+    <form id="mutual-friend-finder">
+        <div class="form-group">
+            <label for="first">First User: </label>
+            <input type="text" class="form-control" id="first"/>
+        </div>
+        <div class="form-group">
+            <label for="second">Second User: </label>
+            <input type="text" class="form-control" id="second"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="btn-search" class="btn btn-default">Submit</button>
+        </div>
+
+
+    </form>
+
+    <table id="mutual-friends-table" class="display" width="100%"></table>
+
+    <div class="modal fade" id="errorModal" role="dialog">
+        <div class="modal-dialog ">
+
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Error!</h4>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->
+
+</body>
+</html>
